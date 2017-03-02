@@ -1,11 +1,11 @@
 #  :octocat: ProtoWeb CTF Web Based Tool
 Protoweb é uma ferramenta que está sendo desenvolvida para ajudar e facilitar na exploração de aplicações online nos campeonatos de Capture The Flag, vulgo CTF ou Hackaflag.
 
-Como ainda estamos na versão 1.0, espero receber sugestões de mais funçes para implementar o programa!
+Como ainda estamos na versão 1.0, espero receber sugestões de mais funções para implementar o programa!
 
 #  :wrench: Funções
 
-**Buscar por strings em todos os arquivos na pasta**
+- **Buscar por strings em todos os arquivos na pasta**
 
 *Ex:*
 
@@ -14,13 +14,13 @@ Como ainda estamos na versão 1.0, espero receber sugestões de mais funçes par
 
 - **Buscar por Base64 em toda a pagina e alto decodar**
 
-Função feita para altomatizar uma busca por strings criptografadas em Base64.
+Função feita para automatizar uma busca por strings criptografadas em Base64.
 
 *Ex:*
 
 `./ProtoWeb.sh -b64 https://whiteboyz.xyz/bts.js`
 
-Você também pode buscar por Base64 em todos os arquivos exixtentes nas pasta utilizando:
+Você também pode buscar por Base64 em todos os arquivos existentes nas pasta utilizando:
 
 `./ProtoWeb.sh -b64=local` o parametro `local` NÃO deve ser alterado.
 
@@ -37,7 +37,7 @@ Esta função serve para clonar todo o site que será analisado.
 
 - **BruteForce via GET**
 
-Função feita para testar sequencias de números ou palavras passadas via GET no desafio. Muitos desafios CTF Web exigem algo parecido.
+Função feita para testar sequências de números ou palavras passadas via GET no desafio. Muitos desafios CTF Web exigem algo parecido.
 
 *Ex:*
 
