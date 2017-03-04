@@ -253,7 +253,7 @@ case $1 in
 ;;
 "-b64=local") procurar_b64_local
 ;;
-*) echo -e "-h for help\n--clone URL Para clonar\n-P para buscar palavra nos strings\n-b64 Para buscar base64 nos strings"
+*) echo -e "-h for help\n--clone URL Para clonar\n-P para buscar palavra nos strings\n-b64=local Para buscar base64 nos strings"
     exit 1
 ;;
 
