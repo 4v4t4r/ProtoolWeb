@@ -1,20 +1,15 @@
 
 
 echo -e "\e[31m______________________________________________________________________________\n"
-echo -e "       ██▓███   ██▀███   ▒█████  ▄▄▄█████▓ ▒█████   █     █░▓█████  ▄▄▄▄   "
-echo -e "      ▓██░  ██▒▓██ ▒ ██▒▒██▒  ██▒▓  ██▒ ▓▒▒██▒  ██▒▓█░ █ ░█░▓█   ▀ ▓█████▄ "
-echo -e "      ▓██░ ██▓▒▓██ ░▄█ ▒▒██░  ██▒▒ ▓██░ ▒░▒██░  ██▒▒█░ █ ░█ ▒███   ▒██▒ ▄██"
-echo -e "      ▒██▄█▓▒ ▒▒██▀▀█▄  ▒██   ██░░ ▓██▓ ░ ▒██   ██░░█░ █ ░█ ▒▓█  ▄ ▒██░█▀  "
-echo -e "      ▒██▒ ░  ░░██▓ ▒██▒░ ████▓▒░  ▒██▒ ░ ░ ████▓▒░░░██▒██▓ ░▒████▒░▓█  ▀█▓"
-echo -e "      ▒▓▒░ ░  ░░ ▒▓ ░▒▓░░ ▒░▒░▒░   ▒ ░░   ░ ▒░▒░▒░ ░ ▓░▒ ▒  ░░ ▒░ ░░▒▓███▀▒"
-echo -e "      ░▒ ░       ░▒ ░ ▒░  ░ ▒ ▒░     ░      ░ ▒ ▒░   ▒ ░ ░   ░ ░  ░▒░▒   ░ "
-echo -e "      ░░         ░░   ░ ░ ░ ░ ▒    ░      ░ ░ ░ ▒    ░   ░     ░    ░    ░ "
-echo -e "                  ░         ░ ░               ░ ░      ░       ░  ░ ░      "
-echo -e "                                                                   ░ "
-echo -e "\e[0m                             ProtoWeb CTF Web Based Tool\n"
-echo -e "                    Updates - https://github.com/ElberTavares/ProtoWeb/"
-echo -e "                                         V1.0\n"
-echo -e "                             Contact - Twitter @elber333"
+echo -e "        ▄▄▄·▄▄▄        ▄▄▄▄▄            ▄     ▄▌ ▐ ▄▌▄▄▄ .▄▄▄▄· "
+echo -e "       ▐█ ▄██  █·▪      •█  ▪     ▪     █•    █· █▌▐ █▄.▀·▐█ ▀█▪"
+echo -e "        ██▀·▐▀▀▄  ▄█▀▄  ▐█.▪ ▄█▀▄  ▄█▀▄ █▪    █▪▐█▐▐▌▐▀▀▪▄▐█▀▀█▄"
+echo -e "       ▐█▪·•▐█•█▌▐█▌.▐▌ ▐█· ▐█▌.▐▌▐█▌.▐▌▐▌ ▐▌▐█▌ █▐█▌▐█▄▄▌██▄▪▐█"
+echo -e "       .▀   .▀  ▀ ▀█▄▀▪ ▀▀   ▀█▄▀▪ ▀█▄▀▪.▀▀▀  ▀▀▀▀ ▀▪ ▀▀▀ ·▀▀▀▀ \n"
+echo -e "\e[0m                          ProtoolWeb CTF Web Based Tool\n"
+echo -e "                 Updates - https://github.com/ElberTavares/ProtoolWeb/"
+echo -e "                                      V1.0\n"
+echo -e "                          Contact - Twitter @elber333"
 echo -e "______________________________________________________________________________\n"
 
                                                                    
@@ -121,7 +116,7 @@ pin()
     }
     
     export -f testa
-     #Aqui fica a palavra que voce esta buscando. Ex: Flag
+     #Aqui ficara a palavra que voce esta buscando. Ex: Flag
     echo -n "Palavra chave > "
     read wd
 
