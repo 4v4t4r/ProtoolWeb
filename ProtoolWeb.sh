@@ -1,4 +1,4 @@
-
+#!/bin/bash
 
 echo -e "\e[31m______________________________________________________________________________\n"
 echo -e "        ▄▄▄·▄▄▄        ▄▄▄▄▄            ▄     ▄▌ ▐ ▄▌▄▄▄ .▄▄▄▄· "
@@ -6,10 +6,10 @@ echo -e "       ▐█ ▄██  █·▪      •█  ▪     ▪     █•  
 echo -e "        ██▀·▐▀▀▄  ▄█▀▄  ▐█.▪ ▄█▀▄  ▄█▀▄ █▪    █▪▐█▐▐▌▐▀▀▪▄▐█▀▀█▄"
 echo -e "       ▐█▪·•▐█•█▌▐█▌.▐▌ ▐█· ▐█▌.▐▌▐█▌.▐▌▐▌ ▐▌▐█▌ █▐█▌▐█▄▄▌██▄▪▐█"
 echo -e "       .▀   .▀  ▀ ▀█▄▀▪ ▀▀   ▀█▄▀▪ ▀█▄▀▪.▀▀▀  ▀▀▀▀ ▀▪ ▀▀▀ ·▀▀▀▀ \n"
-echo -e "\e[0m                          ProtoolWeb CTF Web Based Tool\n"
-echo -e "                 Updates - https://github.com/ElberTavares/ProtoolWeb/"
-echo -e "                                      V1.0\n"
-echo -e "                          Contact - Twitter @elber333"
+echo -e "\e[0m                      ProtoolWeb CTF Web Based Tool\n"
+echo -e "          Updates - https://github.com/ElberTavares/ProtoolWeb/\n"
+echo -e "                                 V2.0\n"
+echo -e "                       Contact - Twitter @elber333"
 echo -e "______________________________________________________________________________\n"
 
                                                                    
@@ -128,9 +128,6 @@ pin()
     	"n") seq $ini $fim | xargs -n3 -P10 -I{} bash -c "testa '{}' $url $op $wd $val"
     ;;
     esac
-    #f [ $val == "s" ]; then
-    #	exit 0
-    #fi
 }
 
 url=$2
@@ -158,9 +155,7 @@ pinC()
     esac
     testa()
     {
-    	#if [ $val == 1 ];then
-	#	exit 0
-	#fi
+   
         url=$2
 	op=$3
 	ck=$4
@@ -199,17 +194,56 @@ pinC()
     	"n") seq $ini $fim | xargs -n4 -P10 -I{} bash -c "testa '{}' $url $op $ck $wd"
     ;;
     esac
-    #if [ $val == 1 ];then
-    #	exit 0
-    #fi
 
+
+}
+
+function lfi()
+{
+
+    u=$(echo 'Mozilla/5.0 (X11; Linux i686; rv:45.0) Gecko/20100101 Firefox/45.0')
+    for lfi in $(cat ./includes/wlist/lfi.lst)
+        do
+    if $(curl -A "$u" $url$lfi 2>/dev/null | grep -q "root:"); then
+    
+    echo -e "\n\e[32m[+] Vuln Encontrada! - $lfi\e[39m\n"
+    echo -e "\n$url$lfi" >> ./includes/lfi_log.txt
+    else
+    echo -e "\e[31m[-] Tentando - $lfi"
+    fi
+    done
+    clear
+    echo -e "\e[32m                            [+] Vulns Encontradas!\n"
+    cat ./includes/lfi_log.txt
+}
+
+function xss()
+{
+
+    u=$(echo 'Mozilla/5.0 (X11; Linux i686; rv:45.0) Gecko/20100101 Firefox/45.0')
+    for xss in $(cat ./includes/wlist/xss.txt)
+        do
+    if $(curl -A "$u" $url"$xss" 2>/dev/null | grep -q "XSS"); then
+    
+    echo -e "\n\e[32m[+] Vuln Encontrada! - $xss\e[39m\n"
+    echo -e "\n$url$xss" >> ./includes/xss_log.txt
+    else
+    echo -e "\e[31m[-] Tentando - $xss\n"
+    fi
+    done
+    clear
+    echo -e "\e[32m                            [+] Vulns Encontradas!\n"
+    cat ./includes/xss_log.txt
 }
 
 function help_pg()
 {
 
-
-
+    clear
+    echo -e "\e[32m [+] -lfi - Buscar e explorar falhas LFI\e[0m
+    $0 -lfi URL\n"
+    echo -e "\e[32m [+] -xss - Buscar e explorar falhas XSS\e[0m
+    $0 -xss URL\n"
     echo -e "\e[32m [+] -P - Buscar por palavra nas strings\e[0m
     $0 -P exemplo\n"
     echo -e "\e[32m [+] -b64 - Buscar por base64 na url\e[0m
@@ -234,6 +268,10 @@ function help_pg()
 
 
 case $1 in
+"-xss") xss
+;;
+"-lfi") lfi
+;;
 "-h") help_pg
 ;;
 "-pin") pin
@@ -248,9 +286,8 @@ case $1 in
 ;;
 "-b64=local") procurar_b64_local
 ;;
-*) echo -e "-h for help\n--clone URL Para clonar\n-P para buscar palavra nos strings\n-b64=local Para buscar base64 nos strings"
+*) echo -e "-h for help\n-lfi For check LFI vulns\n--clone URL Para clonar\n-P para buscar palavra nos strings\n-b64=local Para buscar base64 nos strings"
     exit 1
 ;;
-
 esac
 
