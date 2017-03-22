@@ -1,7 +1,7 @@
 #  :octocat: ProtoolWeb CTF Web Based Tool
 Protoolweb is a tool that is being developed to help and facilitate the exploration of online applications in the Capture The Flag championships, popularly known as CTF or Hackaflag.
 
-As we are still in version 1.0, I hope to receive suggestions of more functions to implement the program!
+As we are still in version 2.0, I hope to receive suggestions of more functions to implement the program!
 
 #  :wrench: Functions
 
