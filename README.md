@@ -5,6 +5,19 @@ As we are still in version 1.0, I hope to receive suggestions of more functions 
 
 #  :wrench: Functions
 
+- **Search and browse for faults LFI**
+
+*This function tests various combinations of directories with possible RFI on the victim target site Ex:*
+
+`./ProtoolWeb.sh -lfi URL`
+
+- **Search and browse for faults XSS**
+
+*This function tests various combinations of directories with possibleXSS on the victim target site Ex:*
+
+`./ProtoolWeb.sh -xss URL`
+
+
 - **Search for strings in all files in the folder**
 
 *Ex:*
