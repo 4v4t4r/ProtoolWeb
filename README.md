@@ -5,27 +5,26 @@ As we are still in version 2.0, I hope to receive suggestions of more functions 
 
 #  :wrench: Functions
 
-- **Search and browse for faults LFI**
+# Search and browse for faults LFI
+*LFI Bruteforce*
 
 *This function tests various combinations of directories with possible RFI on the victim target site Ex:*
 
 `./ProtoolWeb.sh -lfi URL`
-
-- **Search and browse for faults XSS**
-
+# Cross-Site Scripting (XSS) Bruteforce
 *This function tests various combinations of directories with possibleXSS on the victim target site Ex:*
 
 `./ProtoolWeb.sh -xss URL`
 
 
-- **Search for strings in all files in the folder**
+# Search for strings in all files in the folder
 
 *Ex:*
 
 `./ProtoolWeb.sh -P flag`
 
 
-- **Search for Base64 on the whole page and high decode**
+# Search for Base64 on the whole page and high decode
 
 Function made to automate a search for Base64-encrypted strings.
 
@@ -39,7 +38,7 @@ You can also search for Base64 on all files in the folders using:
 
 It can be very useful if used together with the `--clone`
 
-- **Clone Site**
+# Clone Site
 
 This function clones the entire site that will be parsed.
 
@@ -48,7 +47,7 @@ This function clones the entire site that will be parsed.
 `./ProtoolWeb.sh --clone https://whiteboyz.xyz/`
 
 
-- **BruteForce since GET method**
+# BruteForce since GET method
 
 Function made to test sequences of numbers or words passed via GET in the challenge. Many CTF Web challenges require something similar.
 
@@ -68,11 +67,11 @@ Represents the initial number of the test. Ex: `1`
 
 Represents the end number of the test. Ex: `100`
 
-- **Brute Force with GET method & Convert request to MD5 hash**
+# Brute Force with GET method & Convert request to MD5 hash
 
 `./ProtoolWeb.sh -pin https://whiteboyz.xyz/md5.php?flag= -md5`
 
-- **Brute Force with GET method with cookie**
+# Brute Force with GET method with cookie
 
 To request with Cookies:
 
