@@ -8,7 +8,7 @@ echo -e "       ▐█▪·•▐█•█▌▐█▌.▐▌ ▐█· ▐█▌
 echo -e "       .▀   .▀  ▀ ▀█▄▀▪ ▀▀   ▀█▄▀▪ ▀█▄▀▪.▀▀▀  ▀▀▀▀ ▀▪ ▀▀▀ ·▀▀▀▀ \n"
 echo -e "\e[0m                      ProtoolWeb CTF Web Based Tool\n"
 echo -e "          Updates - https://github.com/ElberTavares/ProtoolWeb/\n"
-echo -e "                                 V2.0\n"
+echo -e "                                 V2.1\n"
 echo -e "                       Contact - Twitter @elber333"
 echo -e "______________________________________________________________________________\n"
 
@@ -87,7 +87,7 @@ pin()
     fi
     testa()
     {
-	#val="c"
+	
         url=$2
 	op=$3
 	wd=$4
@@ -183,7 +183,7 @@ pinC()
  
 
     export -f testa
-     #Aqui fica a palavra que voce esta buscando. Ex: Flag
+     #Aqui ira ficar a palavra que voce esta buscando. Ex: Flag
     echo -n "Palavra chave > "
     read wd
     case $wlist in
@@ -219,16 +219,23 @@ function lfi()
 
 function xss()
 {
-
+    echo -n "Type 1 For standard search or 2 for full search> "
+    read xso
+    case $xso in
+        "1") fnd=$(echo "<script>alert('")
+    ;;
+        "2") fnd=$(echo "')</")
+    ;;
+    esac
     u=$(echo 'Mozilla/5.0 (X11; Linux i686; rv:45.0) Gecko/20100101 Firefox/45.0')
     for xss in $(cat ./includes/wlist/xss.txt)
         do
-    if $(curl -A "$u" $url"$xss" 2>/dev/null | grep -q "XSS"); then
+    if $(curl -A "$u" $url"$xss" 2>/dev/null | grep -q $fnd); then
     
     echo -e "\n\e[32m[+] Vuln Encontrada! - $xss\e[39m\n"
     echo -e "\n$url$xss" >> ./includes/xss_log.txt
     else
-    echo -e "\e[31m[-] Tentando - $xss\n"
+    echo -e "\n\e[31m[-] Tentando - $xss"
     fi
     done
     clear
@@ -290,4 +297,3 @@ case $1 in
     exit 1
 ;;
 esac
-
