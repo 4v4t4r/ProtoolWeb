@@ -10,18 +10,18 @@ As we are still in version 2.0, I hope to receive suggestions of more functions 
 
 *This function tests various combinations of directories with possible RFI on the victim target site Ex:*
 
-`./ProtoolWeb.sh -lfi URL`
+`./PWeb.sh -lfi URL`
 # Cross-Site Scripting (XSS) Bruteforce
 *This function tests various combinations of directories with possibleXSS on the victim target site Ex:*
 
-`./ProtoolWeb.sh -xss URL`
+`./PWeb.sh -xss URL`
 
 
 # Search for strings in all files in the folder
 
 *Ex:*
 
-`./ProtoolWeb.sh -P flag`
+`./PWeb.sh -P flag`
 
 
 # Search for Base64 on the whole page and high decode
@@ -30,11 +30,11 @@ Function made to automate a search for Base64-encrypted strings.
 
 *Ex:*
 
-`./ProtoolWeb.sh -b64 https://whiteboyz.xyz/bts.js`
+`./PWeb.sh -b64 https://whiteboyz.xyz/bts.js`
 
 You can also search for Base64 on all files in the folders using:
 
-`./ProtoolWeb.sh -b64=local` The parameter`local` It should NOT be changed.
+`./PWeb.sh -b64=local` The parameter`local` It should NOT be changed.
 
 It can be very useful if used together with the `--clone`
 
@@ -44,7 +44,7 @@ This function clones the entire site that will be parsed.
 
 *Ex:*
 
-`./ProtoolWeb.sh --clone https://whiteboyz.xyz/`
+`./PWeb.sh --clone https://whiteboyz.xyz/`
 
 
 # BruteForce since GET method
@@ -53,7 +53,7 @@ Function made to test sequences of numbers or words passed via GET in the challe
 
 *Ex:*
 
-`./ProtoolWeb.sh -pin https://whiteboyz.xyz/flag.php?flag= -n` The `-pin` It means requesting only the pin.
+`./PWeb.sh -pin https://whiteboyz.xyz/flag.php?flag= -n` The `-pin` It means requesting only the pin.
 
 > Usar Wlist? y/n > 
 
@@ -69,7 +69,7 @@ Represents the end number of the test. Ex: `100`
 
 # Brute Force with GET method & Convert request to MD5 hash
 
-`./ProtoolWeb.sh -pin https://whiteboyz.xyz/md5.php?flag= -md5`
+`./PWeb.sh -pin https://whiteboyz.xyz/md5.php?flag= -md5`
 
 # Brute Force with GET method with cookie
 
@@ -77,8 +77,8 @@ To request with Cookies:
 
 *Ex:*
 
-`./ProtoolWeb.sh -pinC https://whiteboyz.xyz/flag.php?flag= -ck SEUCOOKIE`
+`./PWeb.sh -pinC https://whiteboyz.xyz/flag.php?flag= -ck SEUCOOKIE`
 
 To request cookies and convert to md5:
 
-`./ProtoolWeb.sh -pinC https://whiteboyz.xyz/md5.php?flag= -md5 SEUCOOKIE`
+`./PWeb.sh -pinC https://whiteboyz.xyz/md5.php?flag= -md5 SEUCOOKIE`
